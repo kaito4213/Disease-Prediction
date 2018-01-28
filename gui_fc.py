@@ -1,8 +1,9 @@
 from tkinter import *
-import multiclassification as mc
+from control import *
 import pandas as pd
 import numpy as np
 from tkinter import messagebox
+from Model import *
 
 def show_result():
 	BENE_SEX_IDENT_CD_1, BENE_SEX_IDENT_CD_2 = set_gender(gender.get())
@@ -88,7 +89,7 @@ def show_result():
 		SP_STATE_CODE_51,SP_STATE_CODE_52,SP_STATE_CODE_53,SP_STATE_CODE_54]
 
 	test_X = np.array(test_X).reshape(1,-1)
-	result = mc.test_multilabel(model, test_X)
+	result = myControl.prediction(test_X)
 	messagebox.showinfo("Diagnose",result)
 	
 
@@ -132,8 +133,9 @@ def set_disease(sp):
 	else:
 		return 2
 
-df = pd.read_csv('clean_b_i_2008.csv')
-model = mc.multilabel(df)
+data = np.load('FC_data.npy')
+myControl = control(data)
+
 
 master = Tk()
 master.title("Prediction of potential disease")

@@ -1,0 +1,6 @@
+model_checkpoint_path: "epoch29.ckpt"
+all_model_checkpoint_paths: "epoch9.ckpt"
+all_model_checkpoint_paths: "epoch14.ckpt"
+all_model_checkpoint_paths: "epoch19.ckpt"
+all_model_checkpoint_paths: "epoch24.ckpt"
+all_model_checkpoint_paths: "epoch29.ckpt"
