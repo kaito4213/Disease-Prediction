@@ -51,5 +51,15 @@ def multilabel(df):
 
 def test_multilabel(classifier, X_test):
     predictions = classifier.predict(X_test)
+    predictions = predictions.toarray()[0,:].tolist()
+    disease = ['ICD9_DGNS_CD_1', 'ICD9_DGNS_CD_2', 'ICD9_DGNS_CD_3',
+       'ICD9_DGNS_CD_4', 'ICD9_DGNS_CD_5', 'ICD9_DGNS_CD_6', 'ICD9_DGNS_CD_7',
+       'ICD9_DGNS_CD_8', 'ICD9_DGNS_CD_9', 'ICD9_DGNS_CD_10']
+    pred_disease = []
+    for i in range(len(predictions)):
+        if predictions[i]==1:
+            pred_disease.append(disease[i])
+    output_result = "You have high risk of getting the following disease(s): {}".format(pred_disease)
+    return output_result
 
 

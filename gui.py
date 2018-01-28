@@ -2,7 +2,7 @@ from tkinter import *
 import multiclassification as mc
 import pandas as pd
 import numpy as np
-
+from tkinter import messagebox
 
 def show_result():
 	BENE_SEX_IDENT_CD_1, BENE_SEX_IDENT_CD_2 = set_gender(gender.get())
@@ -76,8 +76,8 @@ def show_result():
 		SP_STATE_CODE_51,SP_STATE_CODE_52,SP_STATE_CODE_53,SP_STATE_CODE_54]
 
 	test_X = np.array(test_X).reshape(1,-1)
-	mc.test_multilabel(model, test_X)
-	Label(master, text = "The result is:").grid(row=27)
+	result = mc.test_multilabel(model, test_X)
+	messagebox.showinfo("Diagnose",result)
 	
 
 def set_gender(gender):
