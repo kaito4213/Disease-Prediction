@@ -9,6 +9,19 @@ def show_result():
 	BENE_RACE_CD_1,BENE_RACE_CD_2,BENE_RACE_CD_3,BENE_RACE_CD_5 = set_race(race.get())
 	BENE_ESRD_IND_0,BENE_ESRD_IND_Y = set_ESRD(ESRD.get())
 	statelist = set_state(state.get())
+
+	ALZHDMTA = set_disease(SP_ALZHDMTA.get())
+	CHF = set_disease(SP_CHF.get())
+	CHRNKIDN = set_disease(SP_CHRNKIDN.get())
+	CNCR = set_disease(SP_CNCR.get())
+	COPD = set_disease(SP_COPD.get())
+	DEPRESSN = set_disease(SP_DEPRESSN.get())
+	DIABETES = set_disease(SP_DIABETES.get())
+	ISCHMCHT = set_disease(SP_ISCHMCHT.get())
+	OSTEOPRS = set_disease(SP_OSTEOPRS.get())
+	RA_OA = set_disease(SP_RA_OA.get())
+	STRKETIA = set_disease(SP_STRKETIA.get())
+
 	SP_STATE_CODE_1 = statelist[0]
 	SP_STATE_CODE_2 = statelist[1]
 	SP_STATE_CODE_3 = statelist[2]
@@ -62,8 +75,7 @@ def show_result():
 	SP_STATE_CODE_53 = statelist[50]
 	SP_STATE_CODE_54 = statelist[51]
 
-	test_X = [visiting_time_before.get(),SP_ALZHDMTA.get(),SP_CHF.get(),SP_CHRNKIDN.get(),SP_CNCR.get(),SP_COPD.get(),\
-		SP_DEPRESSN.get(),SP_DIABETES.get(),SP_ISCHMCHT.get(),SP_OSTEOPRS.get(),SP_RA_OA.get(),SP_STRKETIA.get(), \
+	test_X = [visiting_time_before.get(),ALZHDMTA,CHF,CHRNKIDN,CNCR,COPD, DEPRESSN,DIABETES,ISCHMCHT,OSTEOPRS,RA_OA,STRKETIA, \
 		AGE.get(), BENE_SEX_IDENT_CD_1,BENE_SEX_IDENT_CD_2,BENE_RACE_CD_1,BENE_RACE_CD_2,BENE_RACE_CD_3,BENE_RACE_CD_5,BENE_ESRD_IND_0,BENE_ESRD_IND_Y,\
 		SP_STATE_CODE_1,SP_STATE_CODE_2,SP_STATE_CODE_3,SP_STATE_CODE_4,SP_STATE_CODE_5,SP_STATE_CODE_6,\
 		SP_STATE_CODE_7,SP_STATE_CODE_8,SP_STATE_CODE_9,SP_STATE_CODE_10,SP_STATE_CODE_11,SP_STATE_CODE_12,\
@@ -113,6 +125,12 @@ def set_state(state):
 	statelist = list(0 for i in range(52))
 	statelist[state_map[state]] = 1
 	return statelist
+
+def set_disease(sp):
+	if sp == 0:
+		return 1
+	else:
+		return 2
 
 df = pd.read_csv('clean_b_i_2008.csv')
 model = mc.multilabel(df)
