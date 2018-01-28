@@ -1,3 +1,10 @@
+'''
+    gui_multilabel.py
+    Copyright @ 2018 Jiaoyan<jchen11@wpi.edu>, Ziqi<zlin3@wpi.edu>, Han <hjiang@wpi.edu>
+    License: MIT
+
+'''
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 1/27/18 6:39 PM

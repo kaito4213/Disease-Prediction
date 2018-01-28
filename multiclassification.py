@@ -1,3 +1,10 @@
+'''
+  gui_multilabel.py
+  Copyright @ 2018 Jiaoyan<jchen11@wpi.edu>, Ziqi<zlin3@wpi.edu>, Han <hjiang@wpi.edu>
+  License: MIT
+
+'''
+
 import scipy
 from scipy import sparse
 from sklearn.datasets import make_multilabel_classification

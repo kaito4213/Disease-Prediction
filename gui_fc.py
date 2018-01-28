@@ -1,3 +1,10 @@
+'''
+	gui_multilabel.py
+	Copyright @ 2018 Jiaoyan<jchen11@wpi.edu>, Ziqi<zlin3@wpi.edu>, Han <hjiang@wpi.edu>
+	License: MIT
+
+'''
+
 from tkinter import *
 from control import *
 import pandas as pd
