@@ -1,4 +1,5 @@
-# Disease-Prediction
+# Disease-Prediction 
+### Data Science Project in SheHacks Boston Hackathon
 
 This is application used by patients and physician to predict what disease the patient may have based on current health condition and basic personal information. It will benefit the patient to take the potential risk under control. We use two models to make the prediction
 
